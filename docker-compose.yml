@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: python2 /usr/src/manage.py runserver 0.0.0.0:8080
+    volumes:
+      - .:/usr/src
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHONUNBUFFERED=1
